@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Flask application 2 routes"""
 
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -24,10 +24,24 @@ def display_c(c_text):
     return 'C %s' % c_text.replace('_', ' ')
 
 
+@app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def display_python(py_text='is cool'):
     """Displays Python"""
     return 'Python %s' % py_text.replace('_', ' ')
+
+
+@app.route('/number/<int:n>', strict_slashes=False)
+def display_number(n):
+    """Displays n"""
+    return '%d is a number' % n
+
+
+@app.route("/number_template/<int:n>", strict_slashes=False)
+def int_template(n):
+    """only display when n is integer
+    """
+    return render_template('5-number.html', number=n)
 
 
 if __name__ == '__main__':
