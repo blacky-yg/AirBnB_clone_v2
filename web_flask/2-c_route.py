@@ -24,12 +24,5 @@ def display_c(c_text):
     return 'C %s' % c_text.replace('_', ' ')
 
 
-@app.route('/python', strict_slashes=False)
-@app.route('/python/<text>', strict_slashes=False)
-def display_python(py_text='is cool'):
-    """Displays Python"""
-    return 'Python %s' % py_text.replace('_', ' ')
-
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
