@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-# Flask application
-# 0. Hello Flask!
+"""Flask application"""
 
 from flask import Flask
 
