@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ State Module for HBNB project """
+from os import environ as env
 from models.base_model import BaseModel, Base
 from models.base_model import Base
 from sqlalchemy import Column, String
